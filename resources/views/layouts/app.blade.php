@@ -40,6 +40,11 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+                            @if (Route::has('contact.index'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('contact.index') }}">{{ __('Contact') }}</a>
+                                </li>
+                            @endif
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
