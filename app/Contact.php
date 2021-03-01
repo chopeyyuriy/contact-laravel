@@ -19,7 +19,7 @@ class Contact extends Model
 
     public static function contactMailSend($contact)
     {
-        Mail::to('parent.email@gmail.com')->queue(new ContactMail($contact));
+        Mail::to(env('MAIL_FROM_ADDRESS'))->queue(new ContactMail($contact));
 
         $contact->send = 1;
         $contact->update();
